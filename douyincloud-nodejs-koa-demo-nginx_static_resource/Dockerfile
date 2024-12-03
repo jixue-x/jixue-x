@@ -14,4 +14,3 @@ COPY复制 wwwroot 。
 EXPOSE曝光80008000
 
 CMDCMD /opt/application/run.sh
-./douyincloud-nodejs-koa-demo-nginx_static_resource/wwwroot
