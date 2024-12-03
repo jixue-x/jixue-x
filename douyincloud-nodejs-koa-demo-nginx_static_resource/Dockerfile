@@ -9,7 +9,7 @@ COPY douyincloud-nodejs-koa-demo-nginx_static_resource/nginx.conf /etc/nginx/con
 RUN douyincloud-nodejs-koa-demo-nginx_static_resource/chmod -R 777 /opt/application/run.sh
 
 # 拷贝静态资源
-COPY wwwroot  .
+COPY douyincloud-nodejs-koa-demo-nginx_static_resource/wwwroot  .
 
 EXPOSE 8000
 
