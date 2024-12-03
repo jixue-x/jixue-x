@@ -1,16 +1,16 @@
-来自 public-cn-beijing.cr.volces.com/public/nginx:latest
+FROM public-cn-beijing.cr.volces.com/public/nginx:latest
 
-WORKDIR工作目录 /wwwroot
+WORKDIR ./douyincloud-nodejs-koa-demo-nginx_static_resource/wwwroot
 
-COPY复制 run.sh /opt/application/
+COPY ./douyincloud-nodejs-koa-demo-nginx_static_resource/run.sh /opt/application/
 
-COPY复制 nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./douyincloud-nodejs-koa-demo-nginx_static_resource/nginx.conf /etc/nginx/conf.d/default.conf
 
-RUN运行 chmod -R 777 /opt/application/run.sh
+RUN chmod -R 777 /opt/application/run.sh
 
-# 复制静态资源
-COPY复制 wwwroot 。
+# 拷贝静态资源
+COPY ./douyincloud-nodejs-koa-demo-nginx_static_resource/wwwroot  .
 
-EXPOSE曝光80008000
+EXPOSE 8000
 
-CMDCMD /opt/application/run.sh
+CMD /opt/application/run.sh
